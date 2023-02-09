@@ -23,8 +23,8 @@ public class DataService {
   public DataDTO getById(Long id) {
     HttpHeaders headers = new HttpHeaders();
     headers.setContentType(MediaType.APPLICATION_JSON);
-//    headers.add("Authorization", "Basic " + hash());
-    headers.add("Authorization", "Bearer " + hash());
+    headers.add("Authorization", "Basic " + hash());
+//    headers.add("Authorization", "Bearer " + hash());
     ResponseEntity<Data> response = restTemplate.exchange(
         "https://00ele.mocklab.io/json/" + id.toString(),
         HttpMethod.GET,
